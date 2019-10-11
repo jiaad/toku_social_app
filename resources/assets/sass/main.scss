@@ -1,0 +1,282 @@
+@import url( 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import "reset";
+@import "variables";
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  // background: purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+
+  background: rgba(23,35,104,1);
+  background: -moz-linear-gradient(-45deg, rgba(23,35,104,1) 0%, rgba(226,73,175,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(23,35,104,1)), color-stop(100%, rgba(226,73,175,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(23,35,104,1) 0%, rgba(226,73,175,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(23,35,104,1) 0%, rgba(226,73,175,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(23,35,104,1) 0%, rgba(226,73,175,1) 100%);
+  background: linear-gradient(135deg, rgba(23,35,104,1) 0%, rgba(226,73,175,1) 100%);
+}
+
+.app-container{
+  width: 100%;
+  max-width: 1400px;
+  background: #fff;
+  min-height: calc(100vh - 15vh);
+  border-radius:5px;
+  display: grid;
+  grid-template-columns: 15% 65% 20%;
+
+  #left-menu{
+    border-right: 2px solid #e6e9ef;
+    .account-dropdown{
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      padding: 15px;
+      .logo{
+        .fab{
+          font-size: 2rem;
+        }
+      }
+      .name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .fa-chevron-down{
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}//app-container
+
+.groups{
+  padding: 50px;
+  .group{
+    .title{
+      padding: 10px 0;
+
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    ul{
+      li{
+        color: #818397;
+        font-size: 0.8rem;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+#content-container{
+  overflow: hidden;
+  .search-header{
+    position: relative;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 15px -3px rgba(191,191,191,1);
+    -moz-box-shadow: 0px 0px 15px -3px rgba(191,191,191,1);
+    box-shadow: 0px 0px 15px -3px rgba(191,191,191,1);
+    .search-box{
+      padding: 10px;
+      width: 600px;
+      margin: 0 auto;
+      input[type="text"]{
+        background: #F3F3F3;
+        border: none;
+        border-radius:3px;
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 5px 15px;
+      }
+    }
+
+      .icon-section{
+        position: absolute;
+        top: 20px;
+        right: 0;
+        font-size: 1.2rem;
+        padding-right: 15px;
+
+        & > div {
+          display: inline-block;
+          padding: 0 5px;
+          color: #797979;
+          position: relative;
+
+        }
+          .noti-number{
+            display: none;
+            position: absolute;
+            background: $red;
+            color: white;
+            font-size: 0.6rem;
+            top: -5px;
+            right: -7px;
+            padding: 2px 3px;
+            border: 2px solid white;
+            border-radius: 5px;
+
+            &.active{
+              display: block;
+            }
+        }
+      }
+  }
+  .compose-section{
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+    padding: 35px 0;
+    textarea{
+      width: 100%;
+      background: $textfield;
+      border: none;
+      border-radius: 4px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      height: 75px;
+    }
+    .user-img{
+      position: absolute;
+      background: url("https://images.unsplash.com/photo-1496081081095-d32308dd6206?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=dd302358c7e18c27c4086e97caf85781");
+      width: 40px;
+      height: 40px;
+      border:5px solid white;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 50%;
+      top: 20px;
+      left: -15px;
+    }
+    .buttons{
+      position: absolute;
+      right: 15px;
+      bottom:20px;
+      display: flex;
+      .button{
+        display: inline-block;
+        background: white;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin-left: 15px;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-box-shadow: 0px 0px 15px -3px rgba(191,191,191,1);
+        -moz-box-shadow: 0px 0px 15px -3px rgba(191,191,191,1);
+        box-shadow: 0px 0px 15px -3px rgba(191,191,191,1);
+        color: $htext;
+        &.send-btn{
+          color: white;
+          background: rgba(50,173,255,1);
+          background: -webkit-linear-gradient(rgba(50,173,255,1) 0%, rgba(1,120,255,1) 100%);
+          background: -o-linear-gradient(rgba(50,173,255,1) 0%, rgba(1,120,255,1) 100%);
+          background: linear-gradient(rgba(50,173,255,1) 0%, rgba(1,120,255,1) 100%);
+        }
+
+        .fa-paper-plane{
+          transform: rotate(50deg);
+        }
+      }
+    }
+  }
+}
+
+#messanger{
+  background: #0178FF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// h1 {
+//   font-weight: 100;
+//   font-size: 50px;
+// }
+//
+// .home {
+//   height: 100%;
+//   width: 100%;
+//   text-align: center;
+//
+//   img {
+//     width: 100%;
+//     max-width: 300px;
+//     margin: 0 auto;
+//   }
+//
+//   .Aligner {
+//     min-height: 100vh;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+//
+//   .Aligner-item {
+//     max-width: 50%;
+//   }
+//
+//   .menu {
+//     ul {
+//       li {
+//         padding: 10px 15px;
+//         display: inline-block;
+//         font-family: 'Roboto', sans-serif;
+//         font-size: 18px;
+//         font-weight: 500;
+//       }
+//     }
+//   }
+//
+//   .version-num {
+//     background: #E8E8E8;
+//     border-radius: 4px;
+//     padding: 7px 15px;
+//     display: inline-block;
+//     font-size: 12px;
+//     margin: 10px 0 20px;
+//   }
+//
+//   a { a headline made with HTML
+// And I am a simple text paragraph. The color of this text is styled with CSS. Click the button below to remove me through the power JavaScript.
+//
+// ￼Hide the text above
+//     text-decoration: none;
+//     color: #30395C;
+//     transition: all 0.3s ease-in-out;
+//
+//     &:hover {
+//       color: #43D4D6;
+//     }
+//   }
+// }
