@@ -445,13 +445,16 @@ body {
 #messanger {
   background: #0178ff;
   overflow: hidden;
+  // height: 800px;
 
   .messanger-header {
     overflow: hidden;
     display: flex;
     height: 53.33;
     box-shadow: 0px 2px 15px -3px #1b1b1b;
-    background: linear-gradient(135deg, rgba(1, 120, 255, 1) 0%, rgba(50, 174, 255, 1) 100%);
+    background: linear-gradient(135deg,
+        rgba(1, 120, 255, 1) 0%,
+        rgba(50, 174, 255, 1) 100%);
     font-size: 1.2rem;
     padding: 10px 0;
     color: white;
@@ -482,11 +485,125 @@ body {
       align-items: center;
       justify-content: flex-end;
       padding-right: 15px;
+    }
+  }
 
+  .users {
+    // height: calc(806.64 - (53.33px + 78px)); == 675.31px
+    height: 675.31px;
+    overflow: hidden;
+    // padding: 20px 15px;
+
+    .user-container {
+      overflow: auto;
+      height: 100%;
+      width: 100%;
+      padding: 0 15px;
+      box-sizing: content-box;
     }
 
+    .user {
+      padding: 10px 0px;
+      display: flex;
+
+      &.active {
+        .user-img {
+          opacity: 1;
+        }
+
+        .user-name {
+          color: white;
+          font-weight: 700;
+        }
+
+        .conversation {
+          display: flex;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .user-img {
+          opacity: 1;
+        }
+
+        .user-name {
+          font-weight: 700;
+          color: white;
+        }
+      }
+
+      .user-img {
+        width: 20%;
+        opacity: 0.8;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .user-name {
+        width: 60%;
+        transition: all 0.5s ease-in-out;
+        padding-left: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #99ccff;
+        font-weight: 300;
+        font-size: 0.9rem;
+      }
+
+      .conversation {
+        width: 20%;
+        color: #e6e9ef;
+        display: none;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+
+
+  }
+
+  .search {
+    background: $searchBG;
+    padding: 20px 15px;
+
+
+    input[type="text"] {
+      background: $searchInputBG;
+      width: 100%;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      padding: 10px;
+      color: white;
+
+      &::placeholder {
+        color: #78B3EF;
+        opacity: 1;
+        // font-size: 1.5em;
+      }
+    }
   }
 }
+
+
+
+
+
+
+
+
+
+// te remove focus from input
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+
 
 // h1 {
 //   font-weight: 100;
