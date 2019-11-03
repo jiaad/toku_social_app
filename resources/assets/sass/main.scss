@@ -1,8 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Galada:100,300,400,400i,500,500i,700");
 @import "reset";
 @import "variables";
 @import "pages/home.scss";
 @import "pages/welcome.scss";
+@import "auth/login";
+@import "auth/register";
+@import "auth/forgotPassword";
+
 
 * {
   box-sizing: border-box;
@@ -51,11 +55,42 @@ body {
 
 
 
+input[type="text"], input.text{
+  background: #f3f3f3;
+  border: none;
+  border-radius:3px;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 5px 15px;
+  margin-bottom:1rem ;
+}
 
+label{
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+}
 
-
-
-
+.default-form{
+  button{
+    width: 100%;
+    min-width: 200px;
+    // height: ;
+    font-size: 1.2rem;
+    font-weight: 200;
+    border-radius: 4px;
+    padding: 10px 0px;
+    color: white;
+    background: rgba(50, 173, 255, 1);
+    background: -webkit-linear-gradient(rgba(50, 173, 255, 1) 0%,
+        rgba(1, 120, 255, 1) 100%);
+    background: -o-linear-gradient(rgba(50, 173, 255, 1) 0%,
+        rgba(1, 120, 255, 1) 100%);
+    background: linear-gradient(rgba(50, 173, 255, 1) 0%,
+        rgba(1, 120, 255, 1) 100%);
+  }
+}
 
 // te remove focus from input
 input:focus,
