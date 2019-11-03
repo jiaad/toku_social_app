@@ -19,3 +19,8 @@ const Route = use('Route')
 // Route.on('/').render('pages/home')
 Route.get('/', 'PageController.welcome')
 Route.get('/home', 'PageController.home')
+
+//auth
+Route.get('/login', 'AuthController.login')
+Route.get('/register', 'AuthController.register')
+Route.get('/forgot-password', 'AuthController.forgotPassword')

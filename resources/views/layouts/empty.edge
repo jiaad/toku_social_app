@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>
+    @!section('title')
+  </title>
+  {{-- {{ style('main') }} --}}
+  <script src="https://kit.fontawesome.com/6c78a9c647.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="app-container 
+
+    @!section('current-class')
+
+  "  
+  style="
+    @!section('custom-style-app-container')
+  "
+  >
+  @!section('content')
+  </div>
+      <script src="/js/components/vendor.js"></script>
+      <script src="/js/components/firstComp.js"></script>
+
+
+</body>
+</html>
