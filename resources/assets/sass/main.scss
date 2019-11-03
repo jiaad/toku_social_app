@@ -3,9 +3,10 @@
 @import "variables";
 @import "pages/home.scss";
 @import "pages/welcome.scss";
-@import "auth/login";
-@import "auth/register";
-@import "auth/forgotPassword";
+@import "auth/auth";
+
+// @import "auth/login";
+// @import "auth/forgotPassword";
 
 
 * {
@@ -74,6 +75,7 @@ label{
 
 .default-form{
   button{
+    cursor: pointer;
     width: 100%;
     min-width: 200px;
     // height: ;
