@@ -28,3 +28,4 @@ Route.get('/register', 'AuthController.register')
 Route.post('/register', 'AuthController.storeUser')
 
 Route.get('/forgot-password', 'AuthController.forgotPassword')
+Route.get('/logout', 'AuthController.logout')

@@ -51,6 +51,8 @@ class AuthController {
       }
       // session
       // alert("c'est boooooooooon")
+      // console.log(await auth.attempt(request.input('email'), request.input('password')))
+
       session.flash({ notification: `welcome to toku` })
       return response.redirect('/home')
       // return 'Validation passed'
@@ -70,6 +72,17 @@ class AuthController {
   async login({ response, view, request }) {
     return view.render('auth/login')
   }
+
+  async logout({ response, auth }) {
+    try {
+      await auth.logout()
+      return response.redirect('/')
+    } catch (error) {
+      console.log(error)
+      return `error couldn't logout`
+    }
+  }
+
   async forgotPassword({ response, view, request }) {
     return view.render('auth/forgotPassword')
   }
