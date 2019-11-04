@@ -74,6 +74,22 @@ label{
 }
 
 .default-form{
+  .error-box{
+    display: none;
+    background: $red;
+    color:white;
+    padding: 15px;
+    margin-bottom: 1rem;
+    &.active{
+      display: block;
+    }
+  }
+  .form-group{
+    & > .error{
+      border: 1px solid red;
+    }
+  }
+
   button{
     cursor: pointer;
     width: 100%;
@@ -94,6 +110,24 @@ label{
   }
 }
 
+
+.notification{
+  display: none;
+  &.welcome{
+    background: #a7f442;
+      border: 1px solid red;
+      top: 20px;
+      right: 20px;
+      padding: 20px;
+      z-index: 100;
+      position: absolute;
+    }
+  &.active{
+    display: block;
+  }
+  }
+
+
 // te remove focus from input
 input:focus,
 select:focus,
@@ -101,6 +135,7 @@ textarea:focus,
 button:focus {
   outline: none;
 }
+
 
 
 

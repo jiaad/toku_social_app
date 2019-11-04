@@ -6,8 +6,22 @@
   home-page
 @endsection
 
+@section('notifications')
+<div class="notification welcome
+  @if(flashMessage('notification'))
+    active
+  @endif
+">
+@if(flashMessage('notification'))
+{{flashMessage('notification')}}
+@endif
+    {{--  WELCOME TO TOKU  --}}
+</div>
+@endsection
+
 @section('content-area')
 <section class="compose-section">
+
     <textarea name="name" rows="8" cols="80"></textarea>
     <div class="user-img">
       <img src="" alt="">

@@ -25,13 +25,13 @@ class AuthController {
     if (request.input('password') == request.input('confirm_password')) {
       // check if validation fails
       if (validation.fails()) {
-        // session
-        // .withErrors(validation.messages())
-        // .flashExcept(['password'])
-        console.log(request.input('password'))
-        return (`there is a problem with pass or email`)
+        session
+          .withErrors(validation.messages())
+          .flashExcept(['password'])
+        console.log("the pass word is : ", request.input('password'))
+        // return (`there is a problem with pass or email`)
 
-        // return response.redirect('back')
+        return response.redirect('back')
       }
       try {
         let newUser = await User.create({
@@ -43,13 +43,27 @@ class AuthController {
         console.log("==========================")
         console.log(error);
         console.log("==========================")
-        return `problem with DB`
-
+        session
+          .withErrors([{ field: 'database', message: 'problem with database or this email is already registered' }])
+          .flashExcept(['password'])
+        return response.redirect('back')
+        // return `problem with DB`
       }
-
-      return 'Validation passed'
+      // session
+      // alert("c'est boooooooooon")
+      session.flash({ notification: `welcome to toku` })
+      return response.redirect('/home')
+      // return 'Validation passed'
     } else {
-      return `password doesn't match`
+      //if passwords don't match
+      session
+        .withErrors([
+          { field: 'password', message: 'need to confirm password' },
+          { field: 'confirm_password', message: 'need to confirm password' }
+        ])
+        .flashExcept(['password'])
+      return response.redirect('back')
+      // return `password doesn't match`
     }
   }
 
