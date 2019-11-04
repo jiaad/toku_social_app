@@ -22,5 +22,9 @@ Route.get('/home', 'PageController.home')
 
 //auth
 Route.get('/login', 'AuthController.login')
+Route.post('/login', 'AuthController.checkUser')
+
 Route.get('/register', 'AuthController.register')
+Route.post('/register', 'AuthController.storeUser')
+
 Route.get('/forgot-password', 'AuthController.forgotPassword')

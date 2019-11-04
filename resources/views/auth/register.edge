@@ -17,6 +17,7 @@
   <div class="auth-form">
     <h1>Toku</h1>
     <form action="/register" method="POST" class="default-form">
+      {{ csrfField() }}
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" name="email" value="" class="text">
