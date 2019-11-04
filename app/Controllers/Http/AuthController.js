@@ -10,8 +10,8 @@ class AuthController {
   async storeUser({ request, session, response, auth }) {
     const rules = {
       email: 'required|email|unique:users,email',
-      password: 'required',
-      confirm_password: 'required'
+      password: 'required|min:6|max:40',
+      confirm_password: 'required|min:6|max:40'
 
     }
     // console.log("lllllllllllllllllllllllllllll");

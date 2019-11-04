@@ -28,6 +28,29 @@
       max-width: 400px;
       min-width: 350px;
     }
+    .register-btn{
+      cursor: pointer;
+      width: 100%;
+      min-width: 200px;
+      // height: ;
+      font-size: 1.2rem;
+      font-weight: 200;
+      border-radius: 4px;
+      padding: 10px 0px;
+      color:black;
+      background: white;
+      border: 1px solid black;
+      text-transform: none;
+      transition: all 0.3s ease-in-out;
+      &:visited{
+        color: #1b1B1B;
+      }
+      &:hover{
+        background:#1b1b1b;
+        color: white;
+
+      }
+    }
   }
   .side-image{
     background-position: center center;
