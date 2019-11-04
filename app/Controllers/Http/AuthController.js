@@ -52,7 +52,6 @@ class AuthController {
       // session
       // alert("c'est boooooooooon")
       // console.log(await auth.attempt(request.input('email'), request.input('password')))
-
       session.flash({ notification: `welcome to toku` })
       return response.redirect('/home')
       // return 'Validation passed'
@@ -73,7 +72,7 @@ class AuthController {
 
     return view.render('auth/login')
   }
-  async loginUser({ request, auth, response }) {
+  async loginUser({ request, auth, response, session }) {
     //capture the DATA
     let postData = request.post()
     //find the user in the database by there email
@@ -85,14 +84,27 @@ class AuthController {
       //then login
       if (passwordVerified) {
         await auth.login(user)
+        session.flash({ notification: 'you are signed in' })
         return response.redirect('/home')
       } else { //password incorrect
 
+        session
+          .withErrors([
+            { field: 'password', message: 'Password or email is incorrect' },
+          ])
+          .flashExcept(['password'])
+        return response.redirect('back')
       }
     } else {
       // can't find user with that email
+      session
+        .withErrors([
+          { field: 'email', message: `can't find user with that email` }
+        ])
+        .flashExcept(['password'])
+      response.redirect('back')
     }
-    console.log("pass 2", passwordVerified);
+    // console.log("pass 2", passwordVerified);
 
 
     // return request.post()
