@@ -22,7 +22,7 @@ Route.get('/home', 'PageController.home')
 
 //auth
 Route.get('/login', 'AuthController.login')
-Route.post('/login', 'AuthController.checkUser')
+Route.post('/login', 'AuthController.loginUser')
 
 Route.get('/register', 'AuthController.register')
 Route.post('/register', 'AuthController.storeUser')
