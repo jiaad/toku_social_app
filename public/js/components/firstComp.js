@@ -47,63 +47,8 @@ var Layout = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'home' },
-        _react2.default.createElement(
-          'div',
-          { className: 'Aligner' },
-          _react2.default.createElement(
-            'div',
-            { className: 'Aligner-item' },
-            _react2.default.createElement('img', { src: '/img/logo.png' }),
-            _react2.default.createElement(
-              'h1',
-              null,
-              'Starter-Kit-2k18'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'menu' },
-              _react2.default.createElement(
-                'ul',
-                null,
-                _react2.default.createElement(
-                  'div',
-                  { onClick: this.clickedBtn },
-                  'clickked this'
-                ),
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    { href: 'http://starterkit.codingphase.com', target: 'new' },
-                    'Documentation'
-                  )
-                ),
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  _react2.default.createElement(
-                    'a',
-                    { href: 'http://www.codingphase.com', target: 'new' },
-                    'CodingPhase.Com'
-                  )
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'version-num' },
-              'version 2.0.18'
-            ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'a',
-              { className: 'github-button', href: 'https://github.com/codingphasedotcom/Starter-Kit-2018', 'data-icon': 'octicon-star', 'data-style': 'mega', 'data-count-href': '/codingphasedotcom/rocky/stargazers', 'data-count-api': '/repos/codingphasedotcom/rocky#stargazers_count', 'data-count-aria-label': '# stargazers on GitHub', 'aria-label': 'Star codingphasedotcom/rocky on GitHub' },
-              'Star'
-            )
-          )
-        )
+        { className: 'app' },
+        'this is my project'
       );
     }
   }]);

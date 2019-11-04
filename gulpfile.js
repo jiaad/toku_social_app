@@ -11,7 +11,7 @@ var exec = require('child_process').exec;
 gulp.task('default', ['styles', 'webpack', 'browser-sync'], () => { // ce fichier execute les fonction {styles, webpack, browser-sync}
   gulp.watch('./resources/assets/sass/**/*', ['styles'])
   gulp.watch('./resources/assets/js/**/*', ['webpack'])
-  gulp.watch(['./public/**/*', './public/*', '!public/js/**/.#*js', '!public/css/**/.#*css','./resources/views/*', 'resources/views/**/*' ]).on('change', reload)
+  gulp.watch(['./public/**/*', './public/*', '!public/js/**/.#*js', '!public/css/**/.#*css', './resources/views/*', 'resources/views/**/*']).on('change', reload)
 })
 
 gulp.task('styles', () => {
@@ -20,7 +20,7 @@ gulp.task('styles', () => {
       sass({
         outputStyle: 'compressed'
       })
-      .on('error', sass.logError))
+        .on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
     }))
@@ -49,10 +49,10 @@ gulp.task('browser-sync', ['styles'], function () {
 
 gulp.task('webpack', (cb) => {
   exec('webpack', function (err, stdout, stderr) {
-      console.log(stdout);
-      console.log(stderr);
-      cb(err);
-    });
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
 })
 
 // gulp.task('webpack', shell.task([
